@@ -16,16 +16,19 @@ namespace CPROG3_APP.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly CPROG3_APPDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<ApplicationUser> userManager, CPROG3_APPDbContext context)
+        public HomeController(
+            ILogger<HomeController> logger,
+            UserManager<ApplicationUser> userManager,
+            CPROG3_APPDbContext context)
         {
             _logger = logger;
-            _context  = context;
-            this._userManager = userManager;
+            _userManager = userManager;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-           ViewData["UserID"]= _userManager.GetUserId(this.User);
+            ViewData["UserID"] = _userManager.GetUserId(this.User);
             return View();
         }
 
