@@ -1,4 +1,5 @@
 ﻿using CPROG3_APP.Areas.Identity.Data;
+using CPROG3_APP.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,9 @@ namespace CPROG3_APP.Data;
 
 public class CPROG3_APPDbContext : IdentityDbContext<ApplicationUser>
 {
+    public DbSet<Expense> Expenses { get; set; }
+
+    
     public CPROG3_APPDbContext(DbContextOptions<CPROG3_APPDbContext> options)
         : base(options)
     {

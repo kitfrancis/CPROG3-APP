@@ -11,6 +11,8 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//builder.Services.AddDbContext<CPROG3_APPDbContext>(options =>
+//    options.UseInMemoryDatabase("DineroDb"));
 
 builder.Services.AddRazorPages();
 
@@ -21,7 +23,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline..
+// Configure the HTTP request pipeline.....
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

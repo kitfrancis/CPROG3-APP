@@ -4,6 +4,7 @@ using CPROG3_APP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CPROG3_APP.Migrations
 {
     [DbContext(typeof(CPROG3_APPDbContext))]
-    partial class CPROG3_APPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250517064510_CreateExpenseTable")]
+    partial class CreateExpenseTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
